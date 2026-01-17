@@ -1,7 +1,7 @@
 import axios, { type AxiosResponse } from "axios";
 import type { MovieResponse } from "../types/movieResponse";
 
-const API_TOKEN = import.meta.env.VITeAPITOKEN;
+const VITE_API_TOKEN = import.meta.env.VITE_API_TOKEN;
 
 export const fetchMovies = async (
   query: string
@@ -11,14 +11,13 @@ export const fetchMovies = async (
     {
       params: {
         query,
-        language: "en-US",
+        language: "uk-UK",
       },
       headers: {
-        Authorization: `Bearer ${API_TOKEN}`,
+        Authorization: `Bearer ${VITE_API_TOKEN}`
       },
     }
   );
-
   return response.data;
 };
 
